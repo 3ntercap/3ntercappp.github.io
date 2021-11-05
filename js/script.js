@@ -1,0 +1,157 @@
+// Menu
+
+const hamburger = document.querySelector('.hamburger'),
+      menu = document.querySelector('.menu'),
+      closeElement = document.querySelector('.menu__block__close'),
+      menuOverlay = document.querySelector('.menu__overlay');
+
+hamburger.addEventListener('click', () => {
+    menu.classList.add('active');
+});
+
+closeElement.addEventListener('click', () => {
+    menu.classList.remove('active');
+});
+
+menuOverlay.addEventListener('click', () => {
+    menu.classList.remove('active');
+});
+
+// Skills Progress
+
+const counters = document.querySelectorAll('.skills__progress__item__head__condition'),
+      lines = document.querySelectorAll('.skills__progress__item__progressbar_fill');
+
+counters.forEach( (item, i) => {
+    lines[i].style.width = item.innerHTML;
+});
+
+// ParticlesJS Config.
+particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 300,
+        "density": {
+          "enable": true,
+          "value_area": 700 } },
+  
+  
+      "color": {
+        "value": "#E277CD" },
+  
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000" },
+  
+        "polygon": {
+          "nb_sides": 5 } },
+  
+  
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 0.1,
+          "opacity_min": 0.1,
+          "sync": false } },
+  
+  
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 10,
+          "size_min": 0.1,
+          "sync": false } },
+  
+  
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#E277CD",
+        "opacity": 0.5,
+        "width": 1 },
+  
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200 } } },
+  
+  
+  
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "grab" },
+  
+        "onclick": {
+          "enable": true,
+          "mode": "push" },
+  
+        "resize": true },
+  
+      "modes": {
+        "grab": {
+          "distance": 140,
+          "line_linked": {
+            "opacity": 1 } },
+  
+  
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3 },
+  
+        "repulse": {
+          "distance": 200,
+          "duration": 0.4 },
+  
+        "push": {
+          "particles_nb": 4 },
+  
+        "remove": {
+          "particles_nb": 2 } } },
+  
+  
+  
+    "retina_detect": true });
+
+// Media
+const title = document.querySelectorAll('.title_fz36'),
+      vertical = document.querySelectorAll('.vertical'),
+      horizontal = document.querySelectorAll('.horizontal');
+
+title.forEach((i)=> {
+    if (window.screen.width <= 575) {
+      i.classList.remove('title_fz36');
+      i.classList.add('title_fz24');
+    };
+});
+
+vertical.forEach((i) => {
+	if (window.screen.width <= 575) {
+		i.classList.remove('vertical');
+	};
+});
+
+horizontal.forEach((i) => {
+	if (window.screen.width <= 575) {
+		i.classList.remove('horizontal');
+	};
+});
